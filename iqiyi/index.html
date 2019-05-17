@@ -51,8 +51,8 @@ if ('serviceWorker' in navigator) {
 <body>
 <div align="center">
 	<img src="144.png" \><br>
-	<a href="#" onClick="installf()" id="install">test</a><br>
-    <a href="https://www.iqiyi.com" id="installed" target="_blank">打开</a>
+	<a href="#" onClick="installf()" id="install">正在检查是否已安装</a><br>
+    	<!-- <a href="https://www.iqiyi.com" id="installed" target="_blank">直接打开</a> -->
 </div>
 <script>
 var dfdPrompt = null;
@@ -62,7 +62,7 @@ var installed = document.getElementById("installed");
 //安装前
 window.addEventListener('beforeinstallprompt', function (e) {
 	install.innerHTML = "安装";
-	installed.innerHTML = "不安装，直接打开";	
+	//installed.innerHTML = "不安装，直接打开";	
 	dfdPrompt = e;
     e.preventDefault();
     return false;
@@ -82,7 +82,7 @@ function installf(){
 	dfdPrompt.userChoice.then(function (choiceResult) {
 		if (choiceResult.outcome === 'accepted'){
 			install.innerHTML = "安装成功。。。启动中";
-			installed.innerHTML = "";
+			//installed.innerHTML = "";
 			window.location.href="https://www.iqiyi.com";
 		};	
 	});
