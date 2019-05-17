@@ -76,7 +76,7 @@ var timer=setInterval(function(){
 		if (installed == 0) clearInterval(timer);
 		install.innerHTML = "正在检查是否已安装..." + sec;
 		sec --;
-		if (sec < 0 && installed = 1) {
+		if (sec < 0) {
 			clearInterval(timer);
 			install.innerHTML = "已安装"
 		};
