@@ -9,6 +9,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": "?go",
+  "start_url": "index.html?go",
   "theme_color": "#232325"
 }
