@@ -51,7 +51,7 @@ if ('serviceWorker' in navigator) {
 <body>
 <div align="center">
 	<img src="144.png" \><br>
-	<a href="#" onClick="installf()" id="install"></a><br>
+	<a href="#" onClick="installf()" id="install">test</a><br>
     <a href="https://www.iqiyi.com" id="installed" target="_blank">打开</a>
 </div>
 <script>
@@ -74,6 +74,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
 
 //开始安装
 function installf(){
+	alert (dfdPrompt);
 	if (dfdPrompt == null) {
         return;
     }
