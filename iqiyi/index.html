@@ -49,19 +49,23 @@ if ('serviceWorker' in navigator) {
 
 
 var dfdPrompt = null;
+var installed = 1;
 
 //beforeinstall
 window.addEventListener('beforeinstallprompt', function (e) {
     // 存储事件
     dfdPrompt = e;
-    // 显示按钮
-    display();
-   // 阻止默认事件
+    // 显示安装按钮
+    document.getElementById("aa").innerHTML = "应用未安装，点击安装";
+	// 阻止默认事件
+    installed = 0;
     e.preventDefault();
     return false;
 });
 
-
+function gogo(){
+	document.getElementById("fm").src="https://www.iqiyi.com";
+};
 
 
 function installf(){
@@ -72,39 +76,50 @@ function installf(){
     dfdPrompt.prompt();
 	dfdPrompt.userChoice.then(function (choiceResult){
 		if (choiceResult.outcome === 'accepted') {
-            console.log('用户取消安装应用');
 			// 隐藏按钮
 			hide();
-			dfdPrompt = null;	
 		};
 	});
 };
 
+setTimeout(function(){ 
+	 	gogo();
+		setTimeout(function(){ 
+			if (installed == 1) hide(); 
+		}, 5000);
+}, 500);
+
+
+
 function hide(){
-	document.getElementById("tb").style.height = "0%";
-	document.getElementById("aa").innerHTML = "";
-	document.getElementById("fm").style.height = "100%";
-	
+	setTimeout(function(){ 
+		document.getElementById("tb").style.height = "0%";
+		document.getElementById("aa").innerHTML = "";
+		document.getElementById("fm").style.height = "100%";
+	}, 2000);
+	document.getElementById("aa").innerHTML = "应用已安装";
 };
 
-function display(){
-	document.getElementById("tb").style.height = "5%";
-	document.getElementById("aa").innerHTML = "安装应用到任务栏";
-	document.getElementById("fm").style.height = "95%";
-	
-};
+
+
+
+
 
 </script>
 <body>
 
-<table width="100%" height="0%" border="0" cellspacing="0" cellpadding="0" id="tb">
+<table width="100%" height="5%" border="0" cellspacing="0" cellpadding="0" id="tb">
   <tr>
-    <td width="100%" align="center" valign="middle" bgcolor="#7dd8ce"><a href="#" onClick="installf()" id="aa"></a></td>
+    <td width="100%" align="center" valign="middle" bgcolor="#7dd8ce"><a href="#" onClick="installf()" id="aa">正在检查应用是否安装</a></td>
   </tr>
 </table>
 
 
-<iframe src="https://www.iqiyi.com" width="100%" height="100%" frameborder=0 id="fm"></iframe>
+<iframe src="" width="100%" height="95%" frameborder=0 id="fm"></iframe>
 
+<script>
+
+
+</script>
 </body>
 </html>
