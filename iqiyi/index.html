@@ -57,18 +57,25 @@ if ('serviceWorker' in navigator) {
 <script>
 var dfdPrompt = null;
 var install = document.getElementById("install");
-var installed = document.getElementById("installed");
+//var installed = document.getElementById("installed");
+var installed = 0;
 
 //安装前
 window.addEventListener('beforeinstallprompt', function (e) {
 	install.innerHTML = "安装";
-	//installed.innerHTML = "不安装，直接打开";	
+	//installed.innerHTML = "不安装，直接打开";
+	installed = 1;
 	dfdPrompt = e;
     e.preventDefault();
     return false;
 });
 
-
+//检查是否安装
+setTimeout(function{
+	   	if (installed = 1){
+			install.innerHTML = "已安装";
+		};
+	   }, 3000);
 
 
 
