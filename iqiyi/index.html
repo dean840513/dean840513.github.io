@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="manifest" href="manifest.json">
+<style type="text/css">
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+	font-size: 16px;
+}
+
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+#installed {
+	color: #999;
+}
+</style>
+<title>爱奇艺</title>
+</head>
+<script>
+//ServiceWorker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(registration) {
+		scope: '.'
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
+
+
+</script>
+<body>
+<div align="center">
+	<img src="144.png" \><br>
+	<a href="#" onClick="installf()" id="install"></a><br>
+    <a href="https://www.iqiyi.com" id="installed" target="_blank">打开</a>
+</div>
+<script>
+var dfdPrompt = null;
+var install = document.getElementById("install");
+var installed = document.getElementById("installed");
+
+//安装前
+window.addEventListener('beforeinstallprompt', function (e) {
+	install.innerHTML = "安装";
+	installed.innerHTML = "不安装，直接打开";	
+	dfdPrompt = e;
+    e.preventDefault();
+    return false;
+});
+
+
+
+
+
+//开始安装
+function installf(){
+	if (dfdPrompt == null) {
+        return;
+    }
+	dfdPrompt.prompt();
+	dfdPrompt.userChoice.then(function (choiceResult) {
+		if (choiceResult.outcome === 'accepted'){
+			install.innerHTML = "安装成功。。。启动中";
+			installed.innerHTML = "";
+			window.location.href="https://www.iqiyi.com";
+		};	
+	});
+	
+	dfdPrompt = null;
+};
+
+
+
+
+
+</script>
+</body>
+</html>
