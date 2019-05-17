@@ -71,7 +71,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
 });
 
 //检查是否安装
-setTimeout(function(){if (installed == 1) alert(installed);}, 3000);
+setTimeout(function(){if (installed == 1) install.innerHTML = "安装";}, 3000);
 
 
 
