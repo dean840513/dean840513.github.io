@@ -73,9 +73,10 @@ window.addEventListener('beforeinstallprompt', function (e) {
 //检查是否安装
 var sec = 2;
 var timer=setInterval(function(){
+		if (installed == 0) clearInterval(timer);
 		install.innerHTML = "正在检查是否已安装..." + sec;
 		sec --;
-		if (sec < 0) {
+		if (sec < 0 && installed = 1) {
 			clearInterval(timer);
 			install.innerHTML = "已安装"
 		};
@@ -93,7 +94,6 @@ function installf(){
 	dfdPrompt.userChoice.then(function (choiceResult) {
 		if (choiceResult.outcome === 'accepted'){
 			install.innerHTML = "安装成功。。。启动中";
-			//installed.innerHTML = "";
 			window.location.href="https://www.iqiyi.com";
 		};	
 	});
