@@ -63,7 +63,6 @@ var installed = 1;
 
 //安装前
 window.addEventListener('beforeinstallprompt', function (e) {
-	install.innerHTML = "安装";
 	installed = 0;
 	dfdPrompt = e;
     e.preventDefault();
@@ -73,8 +72,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
 //检查是否安装
 var sec = 2;
 var timer=setInterval(function(){
-		if (installed == 0) clearInterval(timer);
 		install.innerHTML = "正在检查是否已安装..." + sec;
+		if (installed == 0) {
+			clearInterval(timer)
+			install.innerHTML = "安装";
+		};
 		sec --;
 		if (sec < 0) {
 			clearInterval(timer);
