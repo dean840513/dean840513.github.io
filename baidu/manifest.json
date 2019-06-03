@@ -1,0 +1,14 @@
+{
+  "short_name": "Baidu",
+  "name": "Baidu",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "theme_color": "#FFFFFF"
+}
