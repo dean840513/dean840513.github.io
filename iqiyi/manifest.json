@@ -1,6 +1,6 @@
 {
-  "short_name": "iQIYI",
-  "name": "iQIYI",
+  "short_name": "iQiyi",
+  "name": "iQiyi",
   "display": "standalone",
   "icons": [
     {
@@ -9,6 +9,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
-  "theme_color": "#232325"
+  "start_url": "go.html",
+  "theme_color": "#FFFFFF"
 }
