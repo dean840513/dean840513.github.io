@@ -64,7 +64,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
 });
 
 function gogo(){
-	document.getElementById("fm").src="https://www.baidu.com";
+	document.location = "https://www.baidu.com";
 };
 
 
@@ -77,7 +77,7 @@ function installf(){
 	dfdPrompt.userChoice.then(function (choiceResult){
 		if (choiceResult.outcome === 'accepted') {
 			// 显示已添加
-			din();
+			gogo();
 		};
 	});
 };
