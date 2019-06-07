@@ -1,7 +1,7 @@
 {
   "short_name": "Baidu",
   "name": "Baidu",
-  "display": "standalone",
+  "display": "fullscreen",
   "icons": [
     {
       "src": "144.png",
