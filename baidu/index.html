@@ -51,6 +51,10 @@ if ('serviceWorker' in navigator) {
 var dfdPrompt = null;
 var installed = 1;
 
+window.addEventListener('appinstalled', (evt) => {
+  alert ("aaa");
+});	
+
 //beforeinstall
 window.addEventListener('beforeinstallprompt', function (e) {
     // 存储事件
@@ -87,13 +91,6 @@ setTimeout(function(){
 	if (installed == 1) din();
 }, 5000);
 
-
-
-//function hide(){
-	//document.getElementById("tb").style.height = "0%";
-	//document.getElementById("aa").innerHTML = "";
-	//document.getElementById("fm").style.height = "100%";
-//};
 
 function display(){
 	//document.getElementById("tb").style.height = "5%";
