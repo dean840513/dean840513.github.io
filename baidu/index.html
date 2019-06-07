@@ -51,9 +51,9 @@ if ('serviceWorker' in navigator) {
 var dfdPrompt = null;
 var installed = 1;
 
-window.addEventListener('appinstalled', function() { 
-  console.log('Thank you for installing our app!'); 
-});	
+window.addEventListener('appinstalled', function(event) {
+  alert ("aaa");
+});
 
 //beforeinstall
 window.addEventListener('beforeinstallprompt', function (e) {
