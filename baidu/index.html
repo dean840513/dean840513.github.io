@@ -80,12 +80,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
 });
 
 this.addEventListener('install', function (event) {
-    // 如果监听到了 service worker 已经安装成功的话，就会调用 event.waitUntil 回调函数
-    event.waitUntil(
-        // 安装成功后操作 CacheStorage 缓存，使用之前需要先通过 caches.open() 打开对应缓存空间。
-        console.log ("install");
-		
-    );
+	event.waitUntil(console.log ("install"));
 });
 
 function installf(){
