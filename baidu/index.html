@@ -51,17 +51,7 @@ if ('serviceWorker' in navigator) {
 	  
 	  
 	  
-			  //beforeinstall
-		window.addEventListener('beforeinstallprompt', function (e) {
-			// 存储事件
-			dfdPrompt = e;
-			// 显示安装按钮
-			document.getElementById("aa").innerHTML = "点击添加到任务栏";
-			// 阻止默认事件
-			installed = 0;
-			e.preventDefault();
-			return false;
-		});
+
 
     }, function(err) {
       // registration failed :(
@@ -76,7 +66,18 @@ if ('serviceWorker' in navigator) {
 var dfdPrompt = null;
 var installed = 1;
 
-
+//beforeinstall
+window.addEventListener('beforeinstallprompt', function (e) {
+	console.log ("beforeinstallprompt");
+	// 存储事件
+	dfdPrompt = e;
+	// 显示安装按钮
+	document.getElementById("aa").innerHTML = "点击添加到任务栏";
+	// 阻止默认事件
+	installed = 0;
+	e.preventDefault();
+	return false;
+});
 
 
 
