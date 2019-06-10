@@ -29,6 +29,15 @@ a:active {
 
 </head>
 
+
+<body>
+
+<table width="100%" height="5%" border="0" cellspacing="0" cellpadding="0" id="tb">
+  <tr>
+   <td width="100%" align="center" valign="middle" bgcolor="#7dd8ce" onClick="installf()"><a href="#" id="aa">正在检查是否添加</a></td>
+  </tr>
+</table>
+
 <script>
 
 //ServiceWorker
@@ -37,13 +46,16 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').then(function(registration) {
 		scope: '.'
       // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      //console.log('ServiceWorker registration successful with scope: ', registration.scope);
+	  document.getElementById("aa").innerHTML = "应用已添加";
     }, function(err) {
       // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
+      //console.log('ServiceWorker registration failed: ', err);
+	  alert ('ServiceWorker registration failed: ', err);
     });
   });
 }
+
 
 
 var dfdPrompt = null;
@@ -54,16 +66,14 @@ window.addEventListener('beforeinstallprompt', function (e) {
     // 存储事件
     dfdPrompt = e;
     // 显示安装按钮
-    display();
+    document.getElementById("aa").innerHTML = "点击添加到任务栏";
 	// 阻止默认事件
     installed = 0;
     e.preventDefault();
     return false;
 });
 
-function gogo(){
-	document.location = "go.html";
-};
+
 
 
 function installf(){
@@ -75,37 +85,20 @@ function installf(){
 	dfdPrompt.userChoice.then(function (choiceResult){
 		if (choiceResult.outcome === 'accepted') {
 			// 显示已添加
-			din();
-			gogo();
+			document.getElementById("aa").innerHTML = "应用已添加";
+			document.location = "go.html";
 		};
 	});
 };
 
-setTimeout(function(){ 
-	if (installed == 1) din();
-}, 5000);
-
-
-function display(){
-	document.getElementById("aa").innerHTML = "点击添加到任务栏";
-};
-
-function din(){
-	document.getElementById("aa").innerHTML = "应用已添加";
-};
+//setTimeout(function(){ 
+//	if (installed == 1) din();
+//}, 5000);
 
 
 
 
 </script>
-<body>
-
-<table width="100%" height="5%" border="0" cellspacing="0" cellpadding="0" id="tb">
-  <tr>
-   <td width="100%" align="center" valign="middle" bgcolor="#7dd8ce" onClick="installf()"><a href="#" id="aa">正在检查是否添加</a></td>
-  </tr>
-</table>
-
 
 </body>
 </html>
