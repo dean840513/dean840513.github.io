@@ -79,7 +79,10 @@ window.addEventListener('beforeinstallprompt', function (e) {
 	return false;
 });
 
-
+this.addEventListener('install', function (event) {
+    // 如果监听到了 service worker 已经安装成功的话，就会调用 event.waitUntil 回调函数
+    console.log('install');
+});
 
 function installf(){
     if (dfdPrompt == null) {
