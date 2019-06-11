@@ -47,16 +47,9 @@ if ('serviceWorker' in navigator) {
 		scope: '.'
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
-	  document.getElementById("aa").innerHTML = "应用已添加";
-	  
-	  
-	  
-
-
     }, function(err) {
       // registration failed :(
-      //console.log('ServiceWorker registration failed: ', err);
-	  alert ('ServiceWorker registration failed: ', err);
+      console.log('ServiceWorker registration failed: ', err);
     });
   });
 }
@@ -79,9 +72,9 @@ window.addEventListener('beforeinstallprompt', function (e) {
 	return false;
 });
 
-this.addEventListener('install', function (event) {
-	event.waitUntil(console.log ("install"));
-});
+
+
+
 
 function installf(){
     if (dfdPrompt == null) {
@@ -98,9 +91,8 @@ function installf(){
 	});
 };
 
-//setTimeout(function(){ 
-//	if (installed == 1) din();
-//}, 5000);
+
+
 
 
 
