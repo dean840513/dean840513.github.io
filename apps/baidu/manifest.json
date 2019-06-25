@@ -9,6 +9,5 @@
       "type": "image/png"
     }
   ],
-  "start_url": "go.html?https://www.baidu.com",
-  "theme_color": "#FFFFFF"
+  "start_url": "go.html?https://www.baidu.com"
 }
