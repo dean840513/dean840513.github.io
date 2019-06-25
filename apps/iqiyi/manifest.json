@@ -9,6 +9,5 @@
       "type": "image/png"
     }
   ],
-  "start_url": "go.html",
-  "theme_color": "#232325"
+  "start_url": "go.html?https://www.iqiyi.com/"
 }
