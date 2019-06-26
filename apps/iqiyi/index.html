@@ -56,19 +56,18 @@ if ('serviceWorker' in navigator) {
 
 
 
-//var dfdPrompt = null;
+var dfdPrompt = null;
 
 //beforeinstall
 window.addEventListener('beforeinstallprompt', function (e) {
-	e.prompt();
-	//alert ("beforeinstallprompt");
+	alert ("beforeinstallprompt");
 	// 存储事件
-	//dfdPrompt = e;
+	dfdPrompt = e;
 	// 显示安装按钮
-	//document.getElementById("aa").innerHTML = "点击添加到任务栏";
+	document.getElementById("aa").innerHTML = "点击添加到任务栏";
 	// 阻止默认事件
-	//e.preventDefault();
-	//return false;
+	e.preventDefault();
+	return false;
 });
 
 
