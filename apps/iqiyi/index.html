@@ -34,7 +34,7 @@ a:active {
 
 <table width="100%" height="5%" border="0" cellspacing="0" cellpadding="0" id="tb">
   <tr>
-   <td width="100%" align="center" valign="middle" bgcolor="#7dd8ce" onClick="installf()"><a href="#" id="aa">正在检查是否添加</a></td>
+   <td width="100%" align="center" valign="middle" bgcolor="#7dd8ce" onClick="installf()"><a href="#" id="aa">正在检查...</a></td>
   </tr>
 </table>
 
@@ -56,20 +56,19 @@ if ('serviceWorker' in navigator) {
 
 
 
-var dfdPrompt = null;
-var installed = 1;
+//var dfdPrompt = null;
 
 //beforeinstall
 window.addEventListener('beforeinstallprompt', function (e) {
-	alert ("beforeinstallprompt");
+	e.prompt();
+	//alert ("beforeinstallprompt");
 	// 存储事件
-	dfdPrompt = e;
+	//dfdPrompt = e;
 	// 显示安装按钮
-	document.getElementById("aa").innerHTML = "点击添加到任务栏";
+	//document.getElementById("aa").innerHTML = "点击添加到任务栏";
 	// 阻止默认事件
-	installed = 0;
-	e.preventDefault();
-	return false;
+	//e.preventDefault();
+	//return false;
 });
 
 
