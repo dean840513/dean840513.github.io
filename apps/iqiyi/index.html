@@ -43,7 +43,7 @@ a:active {
 //ServiceWorker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js').then(function(registration) {
+    navigator.serviceWorker.register('./sw.js').then(function(registration) {
 		scope: '.'
       // Registration was successful
       console.log ('ServiceWorker registration successful with scope: ', registration.scope);
@@ -89,6 +89,9 @@ function installf(){
 	});
 };
 
+setInterval(function (){
+    document.getElementById("aa").click();
+},1000);
 
 
 
