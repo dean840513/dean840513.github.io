@@ -49,6 +49,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
         .then((reg) => {
           console.log('Service worker registered.', reg);
+		  setTimeout("fixNobeforeinstallprompt()", 15000);
         });
   });
 }
@@ -81,7 +82,7 @@ function installPWA(evt) {
 }
 
 
-setTimeout("fixNobeforeinstallprompt()", 15000);
+
 
 function fixNobeforeinstallprompt() {
 	console.log ("fixNobeforeinstallprompt");
