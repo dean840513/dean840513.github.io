@@ -17,46 +17,29 @@
  */
 'use strict';
 
-let deferredInstallPrompt = null;
-const installButton = document.getElementById('butInstall');
-installButton.addEventListener('click', installPWA);
+// CODELAB: Update cache names any time any of the cached files change.
+const CACHE_NAME = 'static-cache-v1';
 
-// CODELAB: Add event listener for beforeinstallprompt event
+// CODELAB: Add list of files to cache here.
+const FILES_TO_CACHE = [
+];
 
+self.addEventListener('install', (evt) => {
+  console.log('[ServiceWorker] Install');
+  // CODELAB: Precache static resources here.
 
-/**
- * Event handler for beforeinstallprompt event.
- *   Saves the event & shows install button.
- *
- * @param {Event} evt
- */
-function saveBeforeInstallPromptEvent(evt) {
-  // CODELAB: Add code to save event & show the install button.
+  self.skipWaiting();
+});
 
-}
+self.addEventListener('activate', (evt) => {
+  console.log('[ServiceWorker] Activate');
+  // CODELAB: Remove previous cached data from disk.
 
+  self.clients.claim();
+});
 
-/**
- * Event handler for butInstall - Does the PWA installation.
- *
- * @param {Event} evt
- */
-function installPWA(evt) {
-  // CODELAB: Add code show install prompt & hide the install button.
+self.addEventListener('fetch', (evt) => {
+  console.log('[ServiceWorker] Fetch', evt.request.url);
+  // CODELAB: Add fetch event handler here.
 
-  // CODELAB: Log user response to prompt.
-
-}
-
-// CODELAB: Add event listener for appinstalled event
-
-/**
- * Event handler for appinstalled event.
- *   Log the installation to analytics or save the event somehow.
- *
- * @param {Event} evt
- */
-function logAppInstalled(evt) {
-  // CODELAB: Add code to log the event
-
-}
+});
