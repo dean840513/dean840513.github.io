@@ -67,7 +67,7 @@ function saveBeforeInstallPromptEvent(evt) {
 
 function installPWA(evt) {
 	// CODELAB: Add code to save event & show the install button.
-	//deferredInstallPrompt = evt;
+	// deferredInstallPrompt = evt;
 	// CODELAB: Log user response to prompt.
 	deferredInstallPrompt.userChoice.then((choice) => {
 		  if (choice.outcome === 'accepted') {
