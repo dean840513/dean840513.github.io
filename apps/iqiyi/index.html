@@ -44,7 +44,7 @@ progress::-webkit-progress-value {
 
 <body>
 
-<a href="#" id="aa" onclick="installPWA()">正在检查</a>
+<a href="#" id="aa" onclick="installPWA()">正在准备</a>
 <progress max="100" value="0" id="pg"></progress>
 
 <script>
@@ -104,7 +104,7 @@ function showProgress(){
 
 function showInstallButton() {
 	console.log ("showInstallButton");
-	if (installButton.innerHTML == "正在检查") installButton.innerHTML = "点击安装";
+	if (installButton.innerHTML != "已安装") installButton.innerHTML = "点击安装";
 	pg.value = 100;
 	clearInterval(timer);
 };
