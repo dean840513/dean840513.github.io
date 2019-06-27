@@ -50,7 +50,8 @@ progress::-webkit-progress-value {
 <script>
 let deferredInstallPrompt = null;
 const installButton = document.getElementById('aa');
-var pg = document.getElementById('pg');
+var pg = document.getElementById('pg');、
+var timer;
 
 // CODELAB: Register service worker.
 if ('serviceWorker' in navigator) {
@@ -91,7 +92,7 @@ function installPWA(evt) {
 }
 
 function showProgress(){
-	var timer = setInterval(function(e){
+	timer = setInterval(function(e){
 		if(pg.value!=100) {
 			pg.value++;
 		}
