@@ -57,13 +57,6 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 
-
-/**
- * Event handler for beforeinstallprompt event.
- *   Saves the event & shows install button.
- *
- * @param {Event} evt
- */
 function saveBeforeInstallPromptEvent(evt) {
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
@@ -71,17 +64,12 @@ function saveBeforeInstallPromptEvent(evt) {
 	document.getElementById("aa").innerHTML = "点击添加到任务栏";
 }
 
-/**
- * Event handler for butInstall - Does the PWA installation.
- *
- * @param {Event} evt
- */
+
 function installPWA(evt) {
 	// CODELAB: Add code to save event & show the install button.
 	deferredInstallPrompt = evt;
 	// CODELAB: Log user response to prompt.
-	deferredInstallPrompt.userChoice
-		.then((choice) => {
+	deferredInstallPrompt.userChoice.then((choice) => {
 		  if (choice.outcome === 'accepted') {
 			console.log('User accepted the A2HS prompt', choice);
 		  } else {
