@@ -40,54 +40,54 @@ a:active {
 
 <script>
 
-//ServiceWorker
+// CODELAB: Register service worker.
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./sw.js').then(function(registration) {
-		scope: '.'
-      // Registration was successful
-      console.log ('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+        .then((reg) => {
+          console.log('Service worker registered.', reg);
+        });
   });
 }
 
+// CODELAB: Add event listener for beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
+let deferredInstallPrompt = null;
 
-var dfdPrompt = null;
-
-//beforeinstall
-window.addEventListener('beforeinstallprompt', function (e) {
+/**
+ * Event handler for beforeinstallprompt event.
+ *   Saves the event & shows install button.
+ *
+ * @param {Event} evt
+ */
+function saveBeforeInstallPromptEvent(evt) {
+	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
-	// 存储事件
-	dfdPrompt = e;
-	// 显示安装按钮
+	deferredInstallPrompt = evt;
 	document.getElementById("aa").innerHTML = "点击添加到任务栏";
-	// 阻止默认事件
-	e.preventDefault();
-	return false;
-});
+}
 
+/**
+ * Event handler for butInstall - Does the PWA installation.
+ *
+ * @param {Event} evt
+ */
+function installPWA(evt) {
+	// CODELAB: Add code to save event & show the install button.
+	deferredInstallPrompt = evt;
+	// CODELAB: Log user response to prompt.
+	deferredInstallPrompt.userChoice
+		.then((choice) => {
+		  if (choice.outcome === 'accepted') {
+			console.log('User accepted the A2HS prompt', choice);
+		  } else {
+			console.log('User dismissed the A2HS prompt', choice);
+		  }
+		  deferredInstallPrompt = null;
+		});
+}
 
-
-
-
-function installf(){
-    if (dfdPrompt == null) {
-        return;
-    };
-	// 通过按钮点击事件触发横幅显示
-    dfdPrompt.prompt();
-	dfdPrompt.userChoice.then(function (choiceResult){
-		if (choiceResult.outcome === 'accepted') {
-			// 显示已添加
-			document.getElementById("aa").innerHTML = "应用已添加";
-			document.location = "go.html?https://www.iqiyi.com";
-		};
-	});
-};
 
 //setInterval(function (){
 //    document.getElementById("aa").click();
