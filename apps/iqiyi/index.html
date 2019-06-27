@@ -39,6 +39,9 @@ a:active {
 </table>
 
 <script>
+let deferredInstallPrompt = null;
+const installButton = document.getElementById('aa');
+installButton.addEventListener('click', installPWA);
 
 // CODELAB: Register service worker.
 if ('serviceWorker' in navigator) {
@@ -53,7 +56,7 @@ if ('serviceWorker' in navigator) {
 // CODELAB: Add event listener for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
-let deferredInstallPrompt = null;
+
 
 /**
  * Event handler for beforeinstallprompt event.
