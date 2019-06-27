@@ -61,7 +61,7 @@ function saveBeforeInstallPromptEvent(evt) {
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
-	document.getElementById("aa").innerHTML = "点击添加到任务栏";
+	installButton.innerHTML = "点击添加到任务栏";
 }
 
 
@@ -81,11 +81,11 @@ function installPWA(evt) {
 }
 
 
-//setInterval(function (){
-    //deferredInstallPrompt.prompt();
-//},1000);
+setTimeout(fixNobeforeinstallprompt(), 15000);
 
-
+function fixNobeforeinstallprompt() {
+	if (installButton.innerHTML == "正在检查...") installButton.innerHTML == "点击添加到任务栏";
+};
 
 
 
