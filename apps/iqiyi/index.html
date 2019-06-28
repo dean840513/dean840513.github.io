@@ -102,7 +102,10 @@ function showProgress(){
 		else {
 			console.log ("clearTimer");
 			clearInterval(timer);
-			if (installButton.innerHTML != "已安装") installButton.innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
+			setTimeout(function(){
+				if (installButton.innerHTML != "已安装") installButton.innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
+			}, 1000);
+			
 			
 		}
 	},110);
