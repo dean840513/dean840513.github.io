@@ -40,6 +40,7 @@ self.addEventListener('activate', (evt) => {
 
 self.addEventListener('fetch', (evt) => {
   console.log('[ServiceWorker] Fetch', evt.request.url);
+  txt.innerHTML = "请点击地址栏右边的加号按钮安装";
   // CODELAB: Add fetch event handler here.
 
 });
