@@ -20,12 +20,14 @@ window.addEventListener('beforeinstallprompt', function(evt){
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
-	showInstallButton();
+	document.getElementById('pg').value = 100;
+	document.getElementById('aa').innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
+	clearInterval(timer);
 });
 
 function installPWA(evt) {
-	console.log ("installPWA")
-	document.getElementById("aa").click();
+	console.log ("installPWA");
+	clearInterval(timer);
 	// CODELAB: Add code to save event & show the install button.
 	deferredInstallPrompt.prompt();
 	// CODELAB: Log user response to prompt.
@@ -48,7 +50,9 @@ function showProgress(){
 				document.getElementById('pg').value++;
 			}
 			else {
-				showInstallButton();
+				console.log ("showInstallButton");
+				if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
+				document.getElementById("aa").click();
 			};
 		},110);	
 	};
@@ -59,5 +63,5 @@ function showInstallButton() {
 	clearInterval(timer);
 	console.log ("showInstallButton");
 	if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
-	document.getElementById('pg').value = 100;
+	
 };
