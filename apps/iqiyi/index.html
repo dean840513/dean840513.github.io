@@ -108,10 +108,10 @@ function showProgress(){
 
 
 function showInstallButton() {
+	clearInterval(timer);
 	console.log ("showInstallButton");
 	if (installButton.innerHTML != "已安装") installButton.innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
 	pg.value = 100;
-	clearInterval(timer);
 };
 
 
