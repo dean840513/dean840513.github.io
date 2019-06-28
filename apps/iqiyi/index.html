@@ -45,7 +45,7 @@ progress::-webkit-progress-value {
 
 <body>
 
-<a href="#" id="aa" onclick="installPWA()">正在准备</a>
+<span id="aa">正在准备<</span>
 <progress max="100" value="0" id="pg"></progress>
 
 <script>
@@ -75,7 +75,7 @@ function saveBeforeInstallPromptEvent(evt) {
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
-	clearTimer();
+	showInstallButton();
 }
 
 
@@ -101,15 +101,15 @@ function showProgress(){
 			pg.value++;
 		}
 		else {
-			clearTimer();
+			showInstallButton();
 		}
 	},110);
 }
 
 
-function clearTimer() {
-	console.log ("clearTimer");
-	if (installButton.innerHTML != "已安装") installButton.innerHTML = "点击安装";
+function showInstallButton() {
+	console.log ("showInstallButton");
+	if (installButton.innerHTML != "已安装") installButton.innerHTML = '<a href="#" id="aa" onclick="installPWA()">点击安装</a>';
 	pg.value = 100;
 	clearInterval(timer);
 };
