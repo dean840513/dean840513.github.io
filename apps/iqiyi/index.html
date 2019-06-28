@@ -75,6 +75,8 @@ function saveBeforeInstallPromptEvent(evt) {
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
 	showInstallButton();
+	pg.value = 100;
+	installButton.innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
 }
 
 
