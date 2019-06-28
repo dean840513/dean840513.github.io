@@ -16,14 +16,12 @@ if ('serviceWorker' in navigator) {
 }
 
 // CODELAB: Add event listener for beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
-function saveBeforeInstallPromptEvent(evt) {
+window.addEventListener('beforeinstallprompt', function(){
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
 	showInstallButton();
-}
-
+});
 
 function installPWA(evt) {
 	console.log ("installPWA")
