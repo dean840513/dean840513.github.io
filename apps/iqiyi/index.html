@@ -96,12 +96,14 @@ function installPWA(evt) {
 
 function showProgress(){
 	installButton.innerHTML = "正在检查";
-	timer = setInterval(function(e){
+	var timer = setInterval(function(e){
 		if(pg.value!=100) {
 			pg.value++;
 		}
 		else {
-			showInstallButton();
+			console.log ("clearTimer");
+			if (installButton.innerHTML != "已安装") installButton.innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
+			
 		}
 	},110);
 }
