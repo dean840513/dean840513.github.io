@@ -16,7 +16,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // CODELAB: Add event listener for beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', function(){
+window.addEventListener('beforeinstallprompt', function(evt){
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
