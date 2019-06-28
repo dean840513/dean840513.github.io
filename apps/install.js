@@ -47,8 +47,8 @@ function showProgress(){
 	if (document.getElementById('aa').innerHTML != "已安装") {
 		document.getElementById('aa').innerHTML = "正在检查";
 		timer = setInterval(function(e){
-			if(pg.value!=100) {
-				pg.value++;
+			if(document.getElementById('pg').value!=100) {
+				document.getElementById('pg').value++;
 			}
 			else {
 				showInstallButton();
