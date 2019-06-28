@@ -21,18 +21,6 @@ a:active {
 	color: #333;
 	text-decoration: none;
 }
-
-progress {
-    border-radius: 2px;
-}
-  
-progress::-webkit-progress-bar {
-    background-color: #d7d7d7;
-}
-  
-progress::-webkit-progress-value {
-    background-color: #7dd8ce;
-}
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,14 +32,12 @@ progress::-webkit-progress-value {
 
 <body>
 
-<a href="#" id="aa" onclick="installPWA()">正在准备</a>
-<progress max="100" value="0" id="pg"></progress>
+<div align="right" id="txt">正在检查...</div>
 
 <script>
-let deferredInstallPrompt = null;
-const installButton = document.getElementById('aa');
-var pg = document.getElementById('pg');
-var timer;
+
+const txt = document.getElementById('txt');
+
 
 // CODELAB: Register service worker.
 if ('serviceWorker' in navigator) {
@@ -59,57 +45,14 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
         .then((reg) => {
           console.log('Service worker registered.', reg);
-		  showProgress();
+		  txt.innerHTML = "请点击右上的加号按钮安装";
         });
   });
 }
 
-// CODELAB: Add event listener for beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 
-function saveBeforeInstallPromptEvent(evt) {
-	// CODELAB: Add code to save event & show the install button.
-	console.log ("beforeinstallprompt");
-	deferredInstallPrompt = evt;
-	showInstallButton();
-}
 
-
-function installPWA(evt) {
-	// CODELAB: Add code to save event & show the install button.
-	// deferredInstallPrompt = evt;
-	// CODELAB: Log user response to prompt.
-	deferredInstallPrompt.prompt();
-	deferredInstallPrompt.userChoice.then((choice) => {
-		  if (choice.outcome === 'accepted') {
-			console.log('User accepted the A2HS prompt', choice);
-		  } else {
-			console.log('User dismissed the A2HS prompt', choice);
-		  }
-		  deferredInstallPrompt = null;
-		});
-}
-
-function showProgress(){
-	installButton.innerHTML = "正在检查";
-	timer = setInterval(function(e){
-		if(pg.value!=100) {
-			pg.value++;
-		}
-		else {
-			showInstallButton();
-		}
-	},100);
-}
-
-
-function showInstallButton() {
-	console.log ("showInstallButton");
-	if (installButton.innerHTML != "已安装") installButton.innerHTML = "点击安装";
-	pg.value = 100;
-	clearInterval(timer);
-};
 
 
 
