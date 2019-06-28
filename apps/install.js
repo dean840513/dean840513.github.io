@@ -1,6 +1,4 @@
 let deferredInstallPrompt = null;
-const installButton = document.getElementById('aa');
-var pg = document.getElementById('pg');
 var timer;
 
 
@@ -61,6 +59,6 @@ function showProgress(){
 function showInstallButton() {
 	clearInterval(timer);
 	console.log ("showInstallButton");
-	if (installButton.innerHTML != "已安装") installButton.innerHTML = '<a href="#">点击安装</a>';
-	pg.value = 100;
+	if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '<a href="#">点击安装</a>';
+	document.getElementById('pg').value = 100;
 };
