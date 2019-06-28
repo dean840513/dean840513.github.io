@@ -75,7 +75,7 @@ function saveBeforeInstallPromptEvent(evt) {
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
 	deferredInstallPrompt = evt;
-	showInstallButton();
+	clearTimer();
 }
 
 
@@ -101,14 +101,14 @@ function showProgress(){
 			pg.value++;
 		}
 		else {
-			showInstallButton();
+			clearTimer();
 		}
 	},110);
 }
 
 
-function showInstallButton() {
-	console.log ("showInstallButton");
+function clearTimer() {
+	console.log ("clearTimer");
 	if (installButton.innerHTML != "已安装") installButton.innerHTML = "点击安装";
 	pg.value = 100;
 	clearInterval(timer);
