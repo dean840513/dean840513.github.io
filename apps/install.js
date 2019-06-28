@@ -44,8 +44,8 @@ function installPWA(evt) {
 }
 
 function showProgress(){
-	if (installButton.innerHTML != "已安装") {
-		installButton.innerHTML = "正在检查";
+	if (document.getElementById('aa').innerHTML != "已安装") {
+		document.getElementById('aa').innerHTML = "正在检查";
 		timer = setInterval(function(e){
 			if(pg.value!=100) {
 				pg.value++;
