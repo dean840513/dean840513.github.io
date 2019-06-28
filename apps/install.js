@@ -22,12 +22,11 @@ window.addEventListener('beforeinstallprompt', function(evt){
 	deferredInstallPrompt = evt;
 	document.getElementById('pg').value = 100;
 	document.getElementById('aa').innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
-	clearInterval(timer);
+	
 });
 
 function installPWA(evt) {
 	console.log ("installPWA");
-	clearInterval(timer);
 	// CODELAB: Add code to save event & show the install button.
 	deferredInstallPrompt.prompt();
 	// CODELAB: Log user response to prompt.
