@@ -32,7 +32,7 @@ a:active {
 
 <body>
 
-<div align="center" id="txt">正在检查...</div>
+<div align="right" id="txt">正在检查...</div>
 
 <script>
 
@@ -45,7 +45,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
         .then((reg) => {
           console.log('Service worker registered.', reg);
-		  txt.innerHTML = "请点击右上的加号按钮安装↗↗↗";
         });
   });
 }
