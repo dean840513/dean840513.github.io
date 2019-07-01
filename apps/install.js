@@ -30,6 +30,7 @@ window.addEventListener('beforeinstallprompt', function(evt){
 
 function installPWA(evt) {
 	console.log ("installPWA");
+	if (deferredInstallPrompt == null) return false;
 	// CODELAB: Add code to save event & show the install button.
 	deferredInstallPrompt.prompt();
 	// CODELAB: Log user response to prompt.
