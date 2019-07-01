@@ -21,7 +21,7 @@ window.addEventListener('beforeinstallprompt', function(evt){
 	clearInterval(timer);
 	deferredInstallPrompt = evt;
 	document.getElementById('pg').value = 100;
-	//document.getElementById('aa').innerHTML = '点击安装';
+	document.getElementById('aa').innerHTML = '点击安装';
 	//document.getElementById("aa").click();
 	//installPWA();
 	evt.preventDefault();
