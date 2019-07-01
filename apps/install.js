@@ -18,6 +18,7 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('beforeinstallprompt', function(evt){
 	// CODELAB: Add code to save event & show the install button.
 	console.log ("beforeinstallprompt");
+	clearInterval(timer);
 	deferredInstallPrompt = evt;
 	document.getElementById('pg').value = 100;
 	//document.getElementById('aa').innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
@@ -60,10 +61,3 @@ function showProgress(){
 	};
 };
 
-
-function showInstallButton() {
-	clearInterval(timer);
-	console.log ("showInstallButton");
-	if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '<a href="#">点击安装</a>';
-	
-};
