@@ -21,7 +21,7 @@ window.addEventListener('beforeinstallprompt', function(evt){
 	clearInterval(timer);
 	deferredInstallPrompt = evt;
 	document.getElementById('pg').value = 100;
-	document.getElementById('aa').innerHTML = '<a href="#">点击安装</a>';
+	document.getElementById('aa').innerHTML = '点击安装';
 	//document.getElementById("aa").click();
 	//installPWA();
 	evt.preventDefault();
@@ -54,7 +54,7 @@ function showProgress(){
 			else {
 				console.log ("showInstallButton");
 				clearInterval(timer);
-				if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '<a href="#">点击安装</a>';
+				if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '点击安装';
 				
 			};
 		},110);	
