@@ -22,7 +22,7 @@ window.addEventListener('beforeinstallprompt', function(evt){
 	document.getElementById('pg').value = 100;
 	document.getElementById('aa').innerHTML = '<a href="#" onclick="installPWA()">点击安装</a>';
 	//document.getElementById("aa").click();
-	installPWA();
+	//installPWA();
 	evt.preventDefault();
     return false;
 });
