@@ -9,7 +9,6 @@ if ('serviceWorker' in navigator) {
         .then((reg) => {
         console.log('Service worker registered.', reg);
 		showProgress();
-
         });
   });
 }
@@ -55,8 +54,7 @@ function showProgress(){
 			else {
 				console.log ("showInstallButton");
 				clearInterval(timer);
-				if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '点击安装';
-				
+				if (document.getElementById('aa').innerHTML != "已安装") document.getElementById('aa').innerHTML = '点击安装';				
 			};
 		},110);	
 	};
