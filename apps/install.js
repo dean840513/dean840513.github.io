@@ -1,18 +1,6 @@
 let deferredInstallPrompt = null;
 var timer;
 
-
-// CODELAB: Register service worker.
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('../sw.js')
-        .then((reg) => {
-        console.log('Service worker registered.', reg);
-		showProgress();
-        });
-  });
-}
-
 // CODELAB: Add event listener for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', function(evt){
 	// CODELAB: Add code to save event & show the install button.
@@ -60,4 +48,3 @@ function showProgress(){
 		},110);	
 	};
 };
-
