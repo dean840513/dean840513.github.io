@@ -45,7 +45,17 @@ a:active {
 </head>
 
 <body>
-<script src="./apps/install.js"></script>
+<script>
+// CODELAB: Register service worker.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+        .then((reg) => {
+        console.log('Service worker registered.', reg);
+        });
+  });
+}
+</script>
 <div align="center">
   <p>&nbsp;</p>
   <p>&nbsp;</p>
