@@ -26,12 +26,9 @@ a:active {
 }
 #haoos {
 	font-size: 48px;
-	font-family: Arial, Helvetica, sans-serif;
 	color: #595959;
 }
 #hh {
-	font-size: 48px;
-	font-family: Arial, Helvetica, sans-serif;
 	color: #7dd8ce;
 	font-weight: bold;
 }
@@ -41,99 +38,100 @@ a:active {
 #add {
 	font-size: 12px;
 }
+#loading {
+	font-size: 36px;
+}
 </style>
 </head>
 
 <body>
+<script src="./reg.js"></script>
 
-<div align="center">
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p><div id="haoos" align="center"><span id="hh">H</span>ao OS</div><br><span id="app">应用中心</span></p>
+<div align="center" id="loading">
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	加载中 <br>
+	<progress id="pg" value="" max="100"></progress>
 </div>
-<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
-  <tr>
-    <td width="20%" align="center"><a href="apps/iqiyi/index.html?https://www.iqiyi.com" target="_blank"><img src="apps/iqiyi/icon.png" width="60" height="60"><br>爱奇艺</a></td>
-    <td width="20%" align="center"><a href="apps/baidu/index.html?https://www.baidu.com" target="_blank"><img src="apps/baidu/icon.png" width="60" height="60"><br>百度</a></td>
-    <td width="20%" align="center">&nbsp;</td>
-    <td width="20%" align="center">&nbsp;</td>
-    <td width="20%" align="center">&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-<script>
-// CODELAB: Register service worker.
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-        .then((reg) => {
-        console.log('Service worker registered.', reg);
-		setTimeout(function(){ alert ("regsitered"); }, 10000); 
-        });
-  });
-}
-</script>
+
+<div align="center" id="main">
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><div id="haoos" align="center"><span id="hh">H</span>ao OS</div><br><span id="app">应用中心</span></p>
+
+	<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+	  <tr>
+		<td width="20%" align="center"><a href="apps/iqiyi/index.html?https://www.iqiyi.com" target="_blank"><img src="apps/iqiyi/icon.png" width="60" height="60"><br>爱奇艺</a></td>
+		<td width="20%" align="center"><a href="apps/baidu/index.html?https://www.baidu.com" target="_blank"><img src="apps/baidu/icon.png" width="60" height="60"><br>百度</a></td>
+		<td width="20%" align="center">&nbsp;</td>
+		<td width="20%" align="center">&nbsp;</td>
+		<td width="20%" align="center">&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	</table>
+
+</div>
 </body>
 </html>
