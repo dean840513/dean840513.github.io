@@ -2,7 +2,6 @@ window.onload = function (){
 	let deferredPrompt;
 	const install = document.querySelector('#install');
 	var url = document.location.href;
-	//install.style.display = 'none';
 
 	window.addEventListener('beforeinstallprompt', (e) => {
 	  // Prevent Chrome 67 and earlier from automatically showing the prompt
