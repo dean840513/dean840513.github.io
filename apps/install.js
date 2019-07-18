@@ -9,6 +9,7 @@ window.onload = function (){
 	  // Stash the event so it can be triggered later.
 	  deferredPrompt = e;
 	  // Update UI to notify the user they can add to home screen
+	  document.getElementById("pre").style.display = 'none';
 	  install.style.display = 'block';
 
 	  install.addEventListener('click', (e) => {
