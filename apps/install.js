@@ -1,6 +1,7 @@
 window.onload = function (){
 	let deferredPrompt;
 	const install = document.querySelector('#install');
+	var url = document.location.href;
 	//install.style.display = 'none';
 
 	window.addEventListener('beforeinstallprompt', (e) => {
@@ -29,6 +30,14 @@ window.onload = function (){
 	});
 	
 	navigator.serviceWorker.getRegistrations().then(registrations => {
-		if (typeof(registrations[0]) == "undefined") document.getElementById("installed").style.display = 'block';
+		if (typeof(registrations[0]) == "undefined") document.getElementById("invalid").style.display = 'block';
 	});
+	
+	document.getElementById('openapp').href = GetUrlPara(url);
+	function GetUrlPara(url) {
+		var arrUrl = url.split("?");
+
+		var para = arrUrl[1];
+		return para;
+	};
 }
