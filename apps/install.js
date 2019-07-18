@@ -9,7 +9,7 @@ window.onload = function (){
 	  // Stash the event so it can be triggered later.
 	  deferredPrompt = e;
 	  // Update UI to notify the user they can add to home screen
-	  $("pre").hide();
+	  $("#pre").hide();
 	  //install.style.display = 'block';
 	  $("#install").fadeIn(1000);
 
@@ -32,8 +32,8 @@ window.onload = function (){
 	
 	navigator.serviceWorker.getRegistrations().then(registrations => {
 		if (typeof(registrations[0]) == "undefined") {
-			$("pre").hide();
-			$("invalid").show();
+			$("#pre").hide();
+			$("#invalid").show();
 		}
 	});
 	
