@@ -1,15 +1,18 @@
 <html>
 <head>
 <style>
-
 </style>
 </head>
-
 <body>
 <script>
-document.location.href = "https://www.baidu.com";
+var url = document.location.href;
+document.location.href = GetUrlPara(url);
+function GetUrlPara(url) {
+	var arrUrl = url.split("?");
+
+	var para = arrUrl[1];
+	return para;
+};
 </script>
-
 </body>
-
 </html>
