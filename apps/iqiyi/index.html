@@ -2,47 +2,34 @@
 <style type="text/css">
 body{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 24px;
 	color: #333;
 }
-a:link {
-	color: #F00;
-}
-a:visited {
-	color: #F00;
-}
-a:hover {
-	color: #F00;
-}
-a:active {
-	color: #F00;
-}
-
-progress {
-    border-radius: 2px;
-}
-  
-progress::-webkit-progress-bar {
-    background-color: #d7d7d7;
-}
-  
-progress::-webkit-progress-value {
-    background-color: #7dd8ce;
+a{
+	color: #FF0000;
 }
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="manifest" href="manifest.json">
-
 </head>
-
-
 <body>
 <script src="../install.js"></script>
 
-<button type="button" onclick="installPWA();" id="aa">正在准备</button>
-<progress max="100" value="0" id="pg"></progress>
-<span id="bb">（如果长时间不出现安装按钮，请点击<a href="#">这里</a>刷新，也可以点击地址栏右边的<img src="../plus.png" />按钮安装）↗↗↗</span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
+<div align="center" id="install" style="display: none;">
+	<img src="./icon.png" height="128px" width="128px" /> <br>
+	<button type="button" onclick="installPWA();" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #333;">点击安装</button>
+</div>
+
+<div align="center" id="invalid" style="display: none;">
+	安装服务已失效，请<a href="https://dean840513.github.io">点此返回</a>后重新安装。
+</div>
+
+<div align="center" id="installed" style="display: none;">
+	应用已安装，请<a href="#" id="openapp">点此打开</a>
+</div>
 </body>
 </html>
