@@ -9,7 +9,7 @@ window.onload = function (){
 	  // Stash the event so it can be triggered later.
 	  deferredPrompt = e;
 	  // Update UI to notify the user they can add to home screen
-	  document.getElementById("pre").style.display = 'none';
+	  $("pre").hide();
 	  //install.style.display = 'block';
 	  $("#install").fadeIn(1000);
 
@@ -31,7 +31,10 @@ window.onload = function (){
 	});
 	
 	navigator.serviceWorker.getRegistrations().then(registrations => {
-		if (typeof(registrations[0]) == "undefined") document.getElementById("invalid").style.display = 'block';
+		if (typeof(registrations[0]) == "undefined") {
+			document.getElementById("pre").style.display = 'none';
+			document.getElementById("invalid").style.display = 'block';
+		}
 	});
 	
 	document.getElementById('openapp').href = GetUrlPara(url);
