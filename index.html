@@ -130,7 +130,8 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
         .then((reg) => {
         console.log('Service worker registered.', reg);
-		setTimeout(function(){ alert ("regsitered"); }, 10000); 
+		//setTimeout(function(){ alert ("regsitered"); }, 10000); 
+		alert ("regsitered");
         });
   });
 }
