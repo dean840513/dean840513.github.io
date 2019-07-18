@@ -32,8 +32,8 @@ window.onload = function (){
 	
 	navigator.serviceWorker.getRegistrations().then(registrations => {
 		if (typeof(registrations[0]) == "undefined") {
-			document.getElementById("pre").style.display = 'none';
-			document.getElementById("invalid").style.display = 'block';
+			$("pre").hide();
+			$("invalid").show();
 		}
 	});
 	
