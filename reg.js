@@ -24,21 +24,23 @@ window.onload = function (){
 				SetTime(); 
 			});
 		} else {
-			alert ("yes");
+			$("#main").fadeIn(1000);
 		};	
 	});
+	//SetTime(); 
+	//$("#main").fadeIn(1000);
 };
 
 function SetTime(){
-	var pg = document.getElementById("pg");
 	var i = 0;
+	$("#loading").fadeIn(1000);
 	var timer = setInterval(function () {
 		i ++
-		pg.value = i;
+		$("#pg").val(i);
 		if (i == 100) {
 			clearInterval(timer);
-			document.getElementById("main").style.display = 'block';
-			document.getElementById("loading").style.display = 'none';
+			$("#loading").hide();
+			$("#main").fadeIn(1000);
 		};
 	}, 100);
 };
