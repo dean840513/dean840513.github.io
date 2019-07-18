@@ -1,6 +1,7 @@
 window.onload = function (){
 	document.getElementById("main").style.display = 'none';
 	navigator.serviceWorker.getRegistrations().then(registrations => {
+		console.log (registrations);
 		if (typeof(registrations[0]) == "undefined") {
 			// CODELAB: Register service worker.
 			if ('serviceWorker' in navigator) {
