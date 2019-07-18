@@ -1,5 +1,5 @@
 window.onload = function (){
-	document.getElementById("main").style.display = 'none';
+	//document.getElementById("main").style.display = 'none';
 	// navigator.serviceWorker.getRegistrations().then(registrations => {
 		// console.log (registrations);
 		// if (typeof(registrations[0]) == "undefined") {
@@ -19,7 +19,10 @@ window.onload = function (){
 	// });
 	navigator.serviceWorker.getRegistrations().then(registrations => {
 		if (typeof(registrations[0]) == "undefined") {
-			alert ("no");
+			navigator.serviceWorker.register('./sw.js').then((reg) => {
+				console.log('Service worker registered.', reg);
+				SetTime(); 
+			});
 		} else {
 			alert ("yes");
 		};	
