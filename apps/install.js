@@ -1,7 +1,7 @@
 window.onload = function (){
 	let deferredPrompt;
-	const addBtn = document.querySelector('#aa');
-	addBtn.style.display = 'none';
+	const install = document.querySelector('#install');
+	//install.style.display = 'none';
 
 	window.addEventListener('beforeinstallprompt', (e) => {
 	  // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -9,11 +9,11 @@ window.onload = function (){
 	  // Stash the event so it can be triggered later.
 	  deferredPrompt = e;
 	  // Update UI to notify the user they can add to home screen
-	  addBtn.style.display = 'block';
+	  install.style.display = 'block';
 
-	  addBtn.addEventListener('click', (e) => {
+	  install.addEventListener('click', (e) => {
 		// hide our user interface that shows our A2HS button
-		addBtn.style.display = 'none';
+		//install.style.display = 'none';
 		// Show the prompt
 		deferredPrompt.prompt();
 		// Wait for the user to respond to the prompt
@@ -29,6 +29,6 @@ window.onload = function (){
 	});
 	
 	navigator.serviceWorker.getRegistrations().then(registrations => {
-		if (typeof(registrations[0]) == "undefined") alert ("no");
+		if (typeof(registrations[0]) == "undefined") document.getElementById("installed").style.display = 'block';
 	});
 }
