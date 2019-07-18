@@ -10,7 +10,8 @@ window.onload = function (){
 	  deferredPrompt = e;
 	  // Update UI to notify the user they can add to home screen
 	  document.getElementById("pre").style.display = 'none';
-	  install.style.display = 'block';
+	  //install.style.display = 'block';
+	  $("#install").fadeIn(1000);
 
 	  install.addEventListener('click', (e) => {
 		// hide our user interface that shows our A2HS button
