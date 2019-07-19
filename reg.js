@@ -1,6 +1,6 @@
 window.onload = function (){
 	navigator.serviceWorker.getRegistrations().then(registrations => {
-		if (typeof(registrations[0]) == "undefined") {
+		if (typeof(registrations[0]) == "undefined" || localStorage.getItem("installed") != "Yes") {
 			navigator.serviceWorker.register('./sw.js').then((reg) => {
 				console.log('Service worker registered.', reg);
 				SetTime(); 
@@ -16,7 +16,7 @@ window.onload = function (){
 	// window.addEventListener('beforeinstallprompt', (e) => {
 		// alert ('beforeinstallprompt');
 	// });
-	alert (localStorage.getItem("lastname"));
+	// alert (localStorage.getItem("installed"));
 
 };
 
@@ -31,7 +31,7 @@ function SetTime(){
 			clearInterval(timer);
 			$("#loading").hide();
 			$("#main").fadeIn(1000);
-			localStorage.setItem("lastname", "Gates");
+			localStorage.setItem("installed", "Yes");
 		};
 	}, 100);
 };
