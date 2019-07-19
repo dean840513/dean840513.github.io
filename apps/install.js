@@ -6,7 +6,7 @@ window.onload = function (){
 	window.addEventListener('beforeinstallprompt', (e) => {
 	  e.preventDefault();
 	  deferredPrompt = e;
-	  if (localStorage.getItem("installed") != "Yes") {
+	  if (localStorage.getItem("installed") == "Yes") {
 		  $("#pre").hide();
 		  $("#install").fadeIn(1000);	  
 	  };
