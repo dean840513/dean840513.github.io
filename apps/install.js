@@ -23,7 +23,7 @@ window.onload = function (){
 	});
 	
 	navigator.serviceWorker.getRegistrations().then(registrations => {
-		if (typeof(registrations[0]) == "undefined") {
+		if (typeof(registrations[0]) == "undefined"  || localStorage.getItem("installed") != "Yes") {
 			$("#pre").hide();
 			$("#invalid").show();
 		}
