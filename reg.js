@@ -6,19 +6,21 @@ window.onload = function (){
 				SetTime(); 
 			});
 		} else {
+			$("#pre").hide();
 			$("#main").fadeIn(1000);
 		};	
 	});
-	//SetTime(); 
-	//$("#main").fadeIn(1000);
+	// SetTime(); 
+	// $("#main").fadeIn(1000);
 
-	window.addEventListener('beforeinstallprompt', (e) => {
-		alert ('beforeinstallprompt');
-	});
+	// window.addEventListener('beforeinstallprompt', (e) => {
+		// alert ('beforeinstallprompt');
+	// });
 };
 
 function SetTime(){
 	var i = 0;
+	$("#pre").hide();
 	$("#loading").fadeIn(1000);
 	var timer = setInterval(function () {
 		i ++
