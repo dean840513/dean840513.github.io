@@ -16,7 +16,7 @@ window.onload = function (){
 	// window.addEventListener('beforeinstallprompt', (e) => {
 		// alert ('beforeinstallprompt');
 	// });
-	// alert (localStorage.getItem("installed"));
+	console.log (localStorage.getItem("installed"));
 
 };
 
