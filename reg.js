@@ -23,7 +23,7 @@ function SetTime(){
 	$("#pre").hide();
 	$("#loading").fadeIn(1000);
 	var timer = setInterval(function () {
-		i ++
+		i ++;
 		$("#pg").val(i);
 		if (i == 100) {
 			clearInterval(timer);
