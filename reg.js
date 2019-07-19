@@ -11,6 +11,10 @@ window.onload = function (){
 	});
 	//SetTime(); 
 	//$("#main").fadeIn(1000);
+
+	window.addEventListener('beforeinstallprompt', (e) => {
+		alert ('beforeinstallprompt');
+	});
 };
 
 function SetTime(){
