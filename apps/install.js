@@ -6,8 +6,10 @@ window.onload = function (){
 	window.addEventListener('beforeinstallprompt', (e) => {
 	  e.preventDefault();
 	  deferredPrompt = e;
-	  $("#pre").hide();
-	  $("#install").fadeIn(1000);
+	  if (localStorage.getItem("installed") != "Yes") {
+		  $("#pre").hide();
+		  $("#install").fadeIn(1000);	  
+	  };
 
 	  install.addEventListener('click', (e) => {
 			deferredPrompt.prompt();
