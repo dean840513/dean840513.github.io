@@ -10,7 +10,7 @@ window.onload = function (){
 			$("#main").fadeIn(1000);
 		};	
 	});
-	// SetTime(); 
+	  SetTime(); 
 	// $("#main").fadeIn(1000);
 
 	// window.addEventListener('beforeinstallprompt', (e) => {
@@ -29,6 +29,8 @@ function SetTime(){
 			clearInterval(timer);
 			$("#loading").hide();
 			$("#main").fadeIn(1000);
+			localStorage.setItem("lastname", "Gates");
+			alert (localStorage.getItem("lastname"));
 		};
 	}, 100);
 };
