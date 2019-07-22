@@ -14,4 +14,4 @@ window.onload = function(){
 			console.log('Service worker registered.', reg);
 		});
 	};
-});
+};
