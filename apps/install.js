@@ -8,4 +8,4 @@ window.onload = function(){
 	window.addEventListener('appinstalled', function(){
 		alert ("应用已安装！")
 	});
-});
+};
