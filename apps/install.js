@@ -1,41 +1,11 @@
-window.onload = function (){
-	let deferredPrompt;
-	const install = document.querySelector('#install');
-	var url = document.location.href;
-
-	window.addEventListener('beforeinstallprompt', (e) => {
-	  e.preventDefault();
-	  deferredPrompt = e;
-	  if (localStorage.getItem("installed") == "Yes") {
-		  $("#pre").hide();
-		  $("#install").fadeIn(1000);	  
-	  };
-
-	  install.addEventListener('click', (e) => {
-			deferredPrompt.prompt();
-			deferredPrompt.userChoice.then((choiceResult) => {
-				if (choiceResult.outcome === 'accepted') {
-				  console.log('User accepted the A2HS prompt');
-				} else {
-				  console.log('User dismissed the A2HS prompt');
-				}
-				deferredPrompt = null;
-		  });
-	  });
-	});
-	
-	navigator.serviceWorker.getRegistrations().then(registrations => {
-		if (typeof(registrations[0]) == "undefined"  || localStorage.getItem("installed") != "Yes") {
-			$("#pre").hide();
-			$("#invalid").show();
-		}
-	});
-	
-	document.getElementById('openapp').href = GetUrlPara(url);
-	function GetUrlPara(url) {
-		var arrUrl = url.split("?");
-
-		var para = arrUrl[1];
-		return para;
+window.onload = function(){
+	// CODELAB: Register service worker.
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('./app/sw.js').then((reg) => {
+			console.log('Service worker registered.', reg);
+		});
 	};
-}
+	window.addEventListener('appinstalled', function(){
+		alert ("应用已安装！")
+	});
+});
