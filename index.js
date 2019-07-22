@@ -1,4 +1,4 @@
-$(document).ready(function(){
+window.onload = function(){
 	$("#pre").hide();
 	$("#main").fadeIn(1000);
 	
@@ -10,6 +10,8 @@ $(document).ready(function(){
 	
 	// CODELAB: Register service worker.
 	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('./app/sw.js').then((reg) => {console.log('Service worker registered.', reg);});
+		navigator.serviceWorker.register('./app/sw.js').then((reg) => {
+			console.log('Service worker registered.', reg);
+		});
 	};
 });
