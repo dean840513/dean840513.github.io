@@ -17,7 +17,7 @@ a{
 <a href="http://www.baidu.com">iframe</a>
 <script>
 window.addEventListener("beforeunload", function(event) {
-    console.log ("aaa");
+    console.log (document.activeElement.href);
 });
 </script>
 
