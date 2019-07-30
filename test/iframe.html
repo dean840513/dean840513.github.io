@@ -14,11 +14,15 @@ a{
 <link rel="manifest" href="manifest.json">
 </head>
 <body>
-<a href="http://www.baidu.com">iframe</a>
+<a href="#" onclick="goto()">iframe</a>
 <script>
 window.addEventListener("beforeunload", function(event) {
-    console.log (document.location.href);
+    console.log (document.activeElement.href);
 });
+
+function goto(){
+	document.location.href = "http://www.baidu.com";
+};
 </script>
 
 </body>
