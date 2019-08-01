@@ -19,5 +19,5 @@
 	  "sizes": "512x512"
 	}
   ],
-  "start_url": "go.html?https://www.iqiyi.com"
+  "start_url": "http://localhost/iqiyi/index.html"
 }
