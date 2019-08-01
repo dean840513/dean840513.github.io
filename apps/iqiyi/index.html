@@ -11,7 +11,6 @@ a{
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">
 </head>
 <body>
 <p>&nbsp;</p>
@@ -25,7 +24,21 @@ a{
 	应用已安装。
 </div>
 
-<script src="../install.js"></script>
+
+<script>
+
+	// CODELAB: Register service worker.
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('../sw.js').then((reg) => {
+			console.log('Service worker registered.', reg);
+		})
+	};
+
+
+var mf='<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">';
+document.getElementsByTagName('head')[0].innerHTML += mf;
+//console.log (document.getElementsByTagName('head')[0].innerHTML);
+</script>
 
 </body>
 </html>
