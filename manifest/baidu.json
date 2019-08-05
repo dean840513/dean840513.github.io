@@ -1,0 +1,23 @@
+{
+  "short_name": "Baidu",
+  "name": "Baidu",
+  "display": "standalone",
+  "baidus": [
+    {
+      "src": "baidu.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+	{
+	  "src": "baidu.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+	{
+	  "src": "baidu.png",
+	  "type": "image/png",
+	  "sizes": "512x512"
+	}
+  ],
+  "start_url": "go.html?https://www.baidu.com"
+}
