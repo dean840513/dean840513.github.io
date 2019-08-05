@@ -1,7 +1,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">
 <title>Hao OS应用中心</title>
 <style type="text/css">
 body,td,th {
@@ -134,6 +133,9 @@ a:active {
 			<!-- console.log('Service worker registered.', reg); -->
 		<!-- }); -->
 	<!-- }; -->
+var mf='<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">';
+document.getElementsByTagName('head')[0].innerHTML += mf;
+console.log (document.getElementsByTagName('head')[0].innerHTML);
 </script>
 </body>
 </html>
