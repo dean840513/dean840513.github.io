@@ -128,11 +128,11 @@ a:active {
 	</table>
 </div>
 <script>
-	<!-- if ('serviceWorker' in navigator) { -->
-		<!-- navigator.serviceWorker.register('./apps/sw.js').then((reg) => { -->
-			<!-- console.log('Service worker registered.', reg); -->
-		<!-- }); -->
-	<!-- }; -->
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('./apps/sw.js').then((reg) => {
+			console.log('Service worker registered.', reg);
+		});
+	};
 </script>
 </body>
 </html>
