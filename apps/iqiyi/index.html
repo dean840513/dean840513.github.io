@@ -28,12 +28,12 @@ a{
 
 <script>
 
-	// CODELAB: Register service worker.
-	<!-- if ('serviceWorker' in navigator) { -->
-		<!-- navigator.serviceWorker.register('../sw.js').then((reg) => { -->
-			<!-- console.log('Service worker registered.', reg); -->
-		<!-- }) -->
-	<!-- }; -->
+	<!-- // CODELAB: Register service worker. -->
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('../sw.js').then((reg) => {
+			console.log('Service worker registered.', reg);
+		})
+	};
 
 
 //var mf='<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">';
