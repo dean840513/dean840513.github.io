@@ -136,6 +136,16 @@ a:active {
 var mf='<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">';
 document.getElementsByTagName('head')[0].innerHTML += mf;
 console.log (document.getElementsByTagName('head')[0].innerHTML);
+
+function GetUrlPara(url) {
+	var arrUrl = url.split("?");
+	var para = arrUrl[1];
+	return para;
+};
+
+var url = GetUrlPara(document.location.href);
+if (url != "haoosinstall") document.location.href = "?haoosinstall";
+
 </script>
 </body>
 </html>
