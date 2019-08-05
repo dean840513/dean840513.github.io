@@ -143,12 +143,7 @@ function GetUrlPara(url) {
 	return para;
 };
 
-var para = GetUrlPara(document.location.href);
-var url = document.location.href;
-if (para != "haoosinstall") {
-	url += "?haoosinstall";
-	window.location.replace (url);
-}
+window.location.reload();
 	
 
 </script>
