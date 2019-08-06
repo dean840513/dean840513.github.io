@@ -4,17 +4,17 @@
   "display": "standalone",
   "baidus": [
     {
-      "src": "www.baidu.com.png",
+      "src": "../icon/baidu.png",
       "sizes": "144x144",
       "type": "image/png"
     },
 	{
-	  "src": "www.baidu.com.png",
+	  "src": "../icon/baidu.png",
 	  "type": "image/png",
 	  "sizes": "192x192"
 	},
 	{
-	  "src": "www.baidu.com.png",
+	  "src": "../icon/baidu.png",
 	  "type": "image/png",
 	  "sizes": "512x512"
 	}
