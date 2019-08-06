@@ -127,25 +127,5 @@ a:active {
 	  </tr>
 	</table>
 </div>
-<script>
-	<!-- if ('serviceWorker' in navigator) { -->
-		<!-- navigator.serviceWorker.register('./apps/sw.js').then((reg) => { -->
-			<!-- console.log('Service worker registered.', reg); -->
-		<!-- }); -->
-	<!-- }; -->
-var mf='<link rel="manifest" href="https://dean840513.github.io/apps/iqiyi/manifest.json">';
-document.getElementsByTagName('head')[0].innerHTML += mf;
-console.log (document.getElementsByTagName('head')[0].innerHTML);
-
-function GetUrlPara(url) {
-	var arrUrl = url.split("?");
-	var para = arrUrl[1];
-	return para;
-};
-
-window.location.reload();
-	
-
-</script>
 </body>
 </html>
