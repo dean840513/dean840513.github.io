@@ -19,5 +19,6 @@
 	  "sizes": "512x512"
 	}
   ],
-  "start_url": "https://www.baidu.com"
+  "start_url": "https://www.baidu.com",
+  "theme_color": "#27292d"
 }
