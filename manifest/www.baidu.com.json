@@ -4,17 +4,17 @@
   "display": "standalone",
   "baidus": [
     {
-      "src": "../icon/baidu.png",
+      "src": "https://dean840513.github.io/icon/baidu.png",
       "sizes": "144x144",
       "type": "image/png"
     },
 	{
-	  "src": "../icon/baidu.png",
+	  "src": "https://dean840513.github.io/icon/baidu.png",
 	  "type": "image/png",
 	  "sizes": "192x192"
 	},
 	{
-	  "src": "../icon/baidu.png",
+	  "src": "https://dean840513.github.io/icon/baidu.png",
 	  "type": "image/png",
 	  "sizes": "512x512"
 	}
