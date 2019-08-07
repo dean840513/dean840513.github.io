@@ -2,7 +2,7 @@
   "short_name": "Baidu",
   "name": "Baidu",
   "display": "standalone",
-  "baidus": [
+  "icons": [
     {
       "src": "https://dean840513.github.io/icon/baidu.png",
       "sizes": "144x144",
