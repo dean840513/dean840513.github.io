@@ -6,7 +6,3 @@ window.onload = function(){
 		});
 	};
 };
-
-window.addEventListener('appinstalled', (evt) => {
-  console.log('a2hs installed');
-});
