@@ -27,7 +27,47 @@ a{
 	应用已安装
 </div>
 
-<script src="../install.js"></script>
+<!-- <script src="../install.js"></script> -->
+	
+<script>
+//setInterval(function(){
+//	document.location.href = "#";
+//}, 3000);
+img1.onload = function(){
+	alert ("111");
+};
+
+function getXHR(){
+          return new XMLHttpRequest();
+          return new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+function isHasFile(path){
+
+       var xhr = getXHR();
+
+       xhr.open("GET",path,false);
+
+      xhr.send();
+
+     if(xhr.status == 200){
+
+       alert("文件加载成功");
+
+        return true;
+
+      }else{
+
+        alert("文件加载失败");
+
+       return false;
+
+    }
+
+}
+
+isHasFile("manifest.json");
+</script>
 
 
 </body>
