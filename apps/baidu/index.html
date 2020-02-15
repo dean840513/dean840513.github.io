@@ -34,7 +34,10 @@ var n = 0;
 img1.onload = function(){
 	alert ("图片加载完毕");
 	n++;
-	if (n==2) alert ("全部加载完毕");
+	if (n==2) {
+		alert ("全部加载完毕");
+		document.location = "#";
+	};
 };
 
 function getXHR(){
@@ -55,7 +58,10 @@ function isHasFile(path){
        alert("文件加载成功");
 	
 	n++;
-	if (n==2) alert ("全部加载完毕");
+	if (n==2) {
+		alert ("全部加载完毕");
+		document.location = "#";
+	};
 
         return true;
 
