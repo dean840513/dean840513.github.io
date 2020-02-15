@@ -30,11 +30,11 @@ a{
 <!-- <script src="../install.js"></script> -->
 	
 <script>
-//setInterval(function(){
-//	document.location.href = "#";
-//}, 3000);
+var n = 0;
 img1.onload = function(){
-	alert ("111");
+	alert ("图片加载完毕");
+	n++;
+	if (n==2) alert ("全部加载完毕");
 };
 
 function getXHR(){
@@ -53,6 +53,9 @@ function isHasFile(path){
      if(xhr.status == 200){
 
        alert("文件加载成功");
+	
+	n++;
+	if (n==2) alert ("全部加载完毕");
 
         return true;
 
