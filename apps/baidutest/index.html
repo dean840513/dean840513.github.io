@@ -1,0 +1,60 @@
+<html>
+<style type="text/css">
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+a:link {
+	color: #FF0000;
+}
+a:visited {
+	color: #FF0000;
+}
+a:hover {
+	color: #FF0000;
+}
+a:active {
+	color: #FF0000;
+}
+</style>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="manifest" href="manifest.json">
+<title>百度</title>
+</head>
+
+
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div align="center">
+	<h1>Hao OS安装程序</h1>
+</div>
+<p align="center"><img id="img1" src="192.png" /></p>
+
+<div id="loading" align="center">
+	<h2>加载中，请稍候</h2>
+</div>
+
+<div id="main" align="center">
+	<h2>已安装应用的用户</h2><a href="go.html"><h3>点此打开</h3></a>
+	<h3>-------------------------------------------------------<h3>
+	<h2>未安装应用的用户</h2><h3><button id="butInstall" aria-label="Install" hidden>点此安装</button></h3>
+</div>
+
+<script src="install.js"></script>
+<script>
+// CODELAB: Register service worker.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+        .then((reg) => {
+          alert ('Service worker registered.', reg);
+        });
+  });
+}
+</script>
+</body>
+</html>
