@@ -2,80 +2,85 @@
 <style type="text/css">
 body{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 24px;
+	font-size: 14px;
 	color: #333;
 }
-a{
+a:link {
 	color: #FF0000;
 }
+a:visited {
+	color: #FF0000;
+}
+a:hover {
+	color: #FF0000;
+}
+a:active {
+	color: #FF0000;
+}
+
+
+
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="manifest" href="manifest.json">
+<title>百度</title>
 </head>
 <body>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p align="center"><img id="img1" src="icon.png" /></p>
+<div align="center">
+	<h1>Hao OS安装程序</h1>
+</div>
+<p align="center"><img id="img1" src="icon.png" height="120" width="120" /></p>
 
-
-<div align="center" id="pre">
-	安装中。。。请稍候
+<div id="loading" align="center">
+	<h2>加载中，请稍候</h2>
 </div>
 
-<div align="center" id="installed" style="display: none;">
-	应用已安装
+<div id="main" align="center" style="display:none">
+	<h2>已安装应用的用户</h2><a href="go.html"><h3>点此打开</h3></a>
+	<h3>-------------------------------------------------------<h3>
+	<h2>未安装应用的用户</h2><a href="#"><h3>点此安装</h3></a>
 </div>
 
 <!-- <script src="../install.js"></script> -->
-	
+
 <script>
+window.addEventListener('beforeinstallprompt', function (e) {
+
+});
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  document.location = "go.html";
+}
+
+window.addEventListener('appinstalled', (evt) => {
+  document.location = "go.html";
+});
+
 var n = 0;
-img1.onload = function(){
-	alert ("图片加载完毕");
-	n++;
-	if (n==2) {
-		alert ("全部加载完毕");
-		document.location = "#";
-	};
+function loaded (){
+	document.getElementById("loading").style="display:none";
+	document.getElementById("main").style="";
+	//alert ("全部加载成功");
 };
 
-function getXHR(){
-          return new XMLHttpRequest();
-          return new ActiveXObject("Microsoft.XMLHTTP");
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "manifest.json", false);
+xhr.send();
+if(xhr.status == 200){
+	//alert("文件加载成功");
+	n ++;
+	if (n == 2) loaded(); 
+}else{
+	//alert("文件加载失败");
 }
 
-function isHasFile(path){
-
-       var xhr = getXHR();
-
-       xhr.open("GET",path,false);
-
-      xhr.send();
-
-     if(xhr.status == 200){
-
-       alert("文件加载成功");
-	
-	n++;
-	if (n==2) {
-		alert ("全部加载完毕");
-		document.location = "#";
-	};
-
-        return true;
-
-      }else{
-
-        alert("文件加载失败");
-
-       return false;
-
-    }
-
-}
-
-isHasFile("manifest.json");
+img1.onload = function(){
+	//alert("图片加载成功");
+    //loaded();
+	n ++;
+	if (n == 2) loaded(); 
+};
 </script>
 
 
