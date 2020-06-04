@@ -4,17 +4,17 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "https://27bund.com/dean/baidu.png",
+      "src": "icon.png",
       "sizes": "144x144",
       "type": "image/png"
     },
 	{
-	  "src": "https://27bund.com/dean/baidu.png",
+	  "src": "icon.png",
 	  "type": "image/png",
 	  "sizes": "192x192"
 	},
 	{
-	  "src": "https://27bund.com/dean/baidu.png",
+	  "src": "icon.png",
 	  "type": "image/png",
 	  "sizes": "512x512"
 	}
