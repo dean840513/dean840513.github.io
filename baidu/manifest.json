@@ -1,0 +1,23 @@
+{
+  "short_name": "百度",
+  "name": "百度",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "http://27bund.com/dean/baidu.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+	{
+	  "src": "http://27bund.com/dean/baidu.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+	{
+	  "src": "http://27bund.com/dean/baidu.png",
+	  "type": "image/png",
+	  "sizes": "512x512"
+	}
+  ],
+  "start_url": "../go.html?https://www.baidu.com"
+}
