@@ -1,0 +1,23 @@
+{
+  "short_name": "4399小游戏",
+  "name": "4399小游戏",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+	{
+	  "src": "icon.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+	{
+	  "src": "icon.png",
+	  "type": "image/png",
+	  "sizes": "512x512"
+	}
+  ],
+  "start_url": "../go.html?http://www.4399.com/"
+}
