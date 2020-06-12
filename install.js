@@ -21,5 +21,5 @@ function installPWA(evt) {
 
 }
 setTimeout (function(){
-	installButton.innerText = "安装到任务栏";
+	installButton.removeAttribute('hidden');
 }, 20000)
